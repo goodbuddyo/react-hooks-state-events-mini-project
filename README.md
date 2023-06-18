@@ -1,6 +1,6 @@
 # Putting it All Together: State and Events
 
-## Learning Goals
+## Learning Goals 
 
 - Use state and events to make components dynamic
 - Implement controlled components
@@ -13,13 +13,33 @@ focusing in particular on working with arrays.
 
 ## Deliverables
 
-There is some starter code built out for all of the components you'll need. The
-data for the application is imported in `App`, so you'll need to pass that data
-down to the components that need it as props.
+There is some starter code built out for all of the components you'll need.
+The data for the application is imported in `App`, (../data) so you'll need to pass that data down to the components that need it as props.
+(see lesson 20230601ScrimbaVideoState9. Inverse Data Flow, and PetApp )
 
 Run `npm install` and `npm start`, then check out the starter code in the
 browser. You'll see a console message with the `TASK` and `CATEGORY` data you'll
 need to pass down from `App`.
+
+
+App ( *tasks, *isDarkMode )
+  |__ CategoryFilter />
+  |__ NewTaskForm />
+  |__ TaskList tasks={tasks} categories={categories} />
+      |__ Task key={task.id} text={task.text} category={task.category} />
+
+
+  // Tasklist ( tasks, *selectedCategory, *search )
+  //   NewTaskForm ( tasks, *itemCategory )
+  //   CategoryFilter (search, onCategoryChange, onSearchChange)
+  //   TaskList
+
+// Shopster01App ( *items, *isDarkMode )
+  // Header ( isDarkMode )
+  // Shoppinglist ( items, *selectedCategory, *search )
+  //   ItemForm ( items, *itemCategory )
+  //   Filter (search, onCategoryChange, onSearchChange)
+  //   Item ( *isInCart )
 
 ### TaskList
 
